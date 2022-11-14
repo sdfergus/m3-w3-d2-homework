@@ -4,7 +4,11 @@
   "description": "MBA Back-End HW - Scss cont'd",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -o css/ scss/",
+    "start": "npm run watch:all",
+    "watch:scss": "onchange 'scss/*.scss' -- npm run scss",
+    "watch:all": "parallelshell 'npm run watch:scss' 'npm run lite' "
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,9 @@
   "homepage": "https://github.com/sdfergus/m3-w3-d2-homework#readme",
   "devDependencies": {
     "node-sass": "^8.0.0"
+  },
+  "dependencies": {
+    "watch": "^1.0.2",
+    "watchman": "^1.0.0"
   }
 }
