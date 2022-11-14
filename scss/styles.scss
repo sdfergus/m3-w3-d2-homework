@@ -1,5 +1,14 @@
 @import "colors.scss";
 
+@mixin text-positioning {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 //Global
 * {
   color: $color-text;
@@ -47,5 +56,9 @@
       left: 50%;
       transform: translate(-50%, -120%);
     }
+  }
+
+  p {
+    @include text-positioning;
   }
 }
